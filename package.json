@@ -1,1 +1,39 @@
-{     "devDependencies": {         "rnpm": "*",         "electron-lite": "kaizhu256/node-electron-lite#alpha",         "utility2": "kaizhu256/node-utility2#alpha"     },     "name":"npmdoc-rnpm",     "homepage": "https://github.com/npmdoc/node-npmdoc-rnpm",     "repository": {         "type": "git",         "url": "https://github.com/npmdoc/node-npmdoc-rnpm.git"     },     "scripts": {         "build-ci": "utility2 shReadmeTest build_ci.sh"     },     "version": "0.0.1" }
+{
+    "author": "kai zhu <kaizhu256@gmail.com>",
+    "description": "#### api documentation for  [rnpm (v1.9.0)](https://github.com/rnpm/rnpm#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-rnpm.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-rnpm) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-rnpm.svg)](https://travis-ci.org/npmdoc/node-npmdoc-rnpm)",
+    "devDependencies": {
+        "electron-lite": "kaizhu256/node-electron-lite#alpha",
+        "rnpm": "*",
+        "utility2": "kaizhu256/node-utility2#alpha"
+    },
+    "engines": {
+        "node": ">=4.0"
+    },
+    "homepage": "https://github.com/npmdoc/node-npmdoc-rnpm",
+    "keywords": [
+        "documentation",
+        "rnpm"
+    ],
+    "license": "MIT",
+    "main": "lib.npmdoc_rnpm.js",
+    "name": "npmdoc-rnpm",
+    "nameAlias": "npmdoc_rnpm",
+    "nameOriginal": "npmdoc-rnpm",
+    "os": [
+        "darwin",
+        "linux"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/npmdoc/node-npmdoc-rnpm.git"
+    },
+    "scripts": {
+        "build-ci": "utility2 shReadmeTest build_ci.sh",
+        "env": "env",
+        "heroku-postbuild": "npm install \"kaizhu256/node-utility2#alpha\" && utility2 shDeployHeroku",
+        "postinstall": "[ ! -f npm_scripts.sh ] || ./npm_scripts.sh postinstall",
+        "start": "PORT=${PORT:-8080} utility2 start test.js",
+        "test": "(set -e; export PORT=$(utility2 shServerPortRandom); utility2 test test.js)"
+    },
+    "version": "0.0.1"
+}
